@@ -1,3 +1,5 @@
-export default function Error() {
-    <p>Loading failed, please, try again</p>
+
+
+export default function Error(){
+    return <p>Loading failed, please, try again</p>
 }

@@ -1,10 +1,16 @@
 import ImageCard from "../ImageCard/ImageCard";
+import { Image } from '../../types';
 
-export default function ImageGallery({ images, openModal }) {
+interface ImageGalleryProps {
+  imagesSet: Image[];
+  openModal: (fullImg: string, alt: string) => void;
+}
+
+export default function ImageGallery({ imagesSet, openModal }: ImageGalleryProps) {
     return (
         <ul className="imgGallery" >
-	{images.map((image)=>(<li key={image.id}>
-<ImageCard image={image} openModal={openModal}/>
+	{imagesSet.map((image)=>(<li key={image.id}>
+<ImageCard image={image} onClick={openModal}/>
 	</li>))}
 	
 </ul>

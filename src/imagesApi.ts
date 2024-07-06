@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Image } from './types';
+import { Image, SearchResult } from './types';
 
 axios.defaults.baseURL = 'https://api.unsplash.com/search/photos/';
 
@@ -9,7 +9,7 @@ export const fetchImages = async(searchQuery:string, page: number) :Promise<Imag
 
  
 
-    const response = await axios.get('?client_id=2eiybNV2jmYvvCmeSq4k0xXVz8Fb4618IbCurb7k5wI'
+    const response = await axios.get<SearchResult>('?client_id=2eiybNV2jmYvvCmeSq4k0xXVz8Fb4618IbCurb7k5wI'
         , {
         params: {
                 query: searchQuery,
@@ -20,6 +20,6 @@ export const fetchImages = async(searchQuery:string, page: number) :Promise<Imag
         }
         }
     )
-    return response.data;
+    return response.data.results;
    
 }

@@ -11,21 +11,26 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
 }
 
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  display: block;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
+
   margin: 0;
   display: flex;
-  place-items: center;
+
   min-width: 320px;
   min-height: 100vh;
 }
@@ -46,9 +51,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,10 +66,82 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+}
+
+.galleryImg {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+
+.modalImg {
+  max-width: 800px;
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: calc(100%-60px);
+  height: 60px;
+  width: 100%;
+  background-color: blue;
+
+}
+
+.searchForm {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+
+
+}
+
+.searchBtn {
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.searchInput {
+  margin-left: 30px;
+  height: 20px;
+}
+
+.lmBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+  color: white;
+  margin-top: 30px;
+}
+
+.imgGallery {
+  margin: 0;
+  padding-top: 100px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.ReactModal__Overlay--after-open {
+  background-color: black;
 }

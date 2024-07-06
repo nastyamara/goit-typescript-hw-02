@@ -1,8 +1,23 @@
-export default function ImageCard({ image, openModal={openModal} }) {
+interface ImageCardProps {
+  image: {
+    urls: {
+      small: string;
+      regular: string;
+    };
+    description: string;
+  };
+  onClick: (fullImg: string, alt: string) => void;
+}
+
+
+export default function ImageCard({ image: {urls, description}, onClick }: ImageCardProps) {
     return (
      <div>
-            <img onClick={openModal} className='galleryImg' src={image.urls.small}
-                alt={image.alt_description} data-source={image.urls.regular} />
+            <img onClick={() => onClick(urls.regular, description)}
+                className='galleryImg'
+                src={urls.small}
+                alt={description}
+                 />
 		</div>
     )
 }

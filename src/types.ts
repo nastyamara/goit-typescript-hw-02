@@ -6,3 +6,9 @@ export interface Image {
     regular: string;
   };
 }
+
+export interface SearchResult {
+  results: Image[];
+  total: number;
+  total_pages: number;
+}
