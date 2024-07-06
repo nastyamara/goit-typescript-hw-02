@@ -79,7 +79,7 @@ function App() {
 
     return (
       <div> 
-        <SearchBar handleSearch={handleSearch} />
+        <SearchBar onSubmit={handleSearch} />
         {error && <Error/>}
         {loading && <Loader/>}
         {images.length > 0 && <ImageGallery imagesSet={images} openModal={openModal} />}
